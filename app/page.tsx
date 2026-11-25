@@ -1,69 +1,60 @@
-import Image from "next/image";
+import Effects from "../components/Effects";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <div id="ld"><div className="m g pill">JS</div><div className="mono mut" id="cn">000</div><div className="bar"><div id="br"></div></div><div className="mono mut">Setting the table…</div></div>
+      <div id="blobs"></div><canvas id="cv" aria-hidden="true"></canvas><div id="pf"></div>
+
+      <nav className="g pill"><a href="#top" style={{ fontWeight: '600' }}>Johaan Sebastian</a>
+      <span className="l"><a href="#about">About me</a><a href="#was-at">I was at...</a><a href="#achievements">Personal Achievements</a><a href="#projects">My Projects</a><a href="#news">News Flash</a><a href="#want">I want to...</a><a href="#meet">Meet me at...</a></span>
+      </nav>
+
+      <main id="top">
+      <header className="hero" style={{ position: 'relative' }}>
+      <div>
+      <span className="mono mut">Bangalore · <span id="clk">--:--</span> local</span>
+      <h1>Johaan Sebastian</h1>
+      <p className="sub mut">Software engineer building thoughtful products, writing about them, and shipping live demos.</p>
+      <span style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}><a href="#projects" className="btn pill" style={{ background: 'var(--acc)', color: 'var(--accfg)' }}>View projects</a><a href="#meet" className="btn g pill">Get in touch</a></span>
+      <div className="stats"><div><b>[00]</b><span>projects built</span></div><div><b>[00]</b><span>flagship</span></div><div><b>[00]</b><span>talks &amp; stages</span></div></div>
+      </div>
+      <div className="tickr"><div className="tl"><b>Breaking News!</b><span>From the man himself</span></div><div className="tv"><div id="tk"></div></div></div>
+      </header>
+
+      <section className="sec" id="about"><div><div className="num">01</div><h2>About me</h2></div>
+      <div className="g" style={{ padding: '32px', display: 'grid', gridTemplateColumns: '200px 1fr', gap: '28px', alignItems: 'center' }}><div style={{ height: '220px', borderRadius: '20px', background: 'linear-gradient(150deg,var(--b1),var(--b2))' }}></div><div><p style={{ margin: '0 0 20px', fontSize: '18px', lineHeight: '1.7' }}>A short statement about who you are, what you build, and what you care about. Two or three sentences work best.</p><span className="chip g pill">[Studying]</span> <span className="chip g pill">[Founder]</span> <span className="chip g pill">[Plays]</span></div></div></section>
+
+      <section className="sec" id="was-at"><div><div className="num">02</div><h2>I was at...</h2></div>
+      <div className="cards"><div className="g card"><p className="yr">2026</p><p className="mut">[Event or hackathon name]</p></div><div className="g card"><p className="yr">2025</p><p className="mut">[Event or hackathon name]</p></div><div className="g card"><p className="yr">2024</p><p className="mut">[Event or hackathon name]</p></div></div></section>
+
+      <section className="sec" id="achievements"><div><div className="num">03</div><h2>Personal Achievements</h2></div>
+      <div className="cards"><div className="g card"><p className="yr">2026</p><p className="mut">[Award, certification, or milestone]</p></div><div className="g card"><p className="yr">2025</p><p className="mut">[Award, certification, or milestone]</p></div><div className="g card"><p className="yr">2024</p><p className="mut">[Award, certification, or milestone]</p></div></div></section>
+
+      <section className="sec" id="projects"><div><div className="num">04</div><h2>My Projects</h2></div>
+      <div><div className="tabs"><button className="on" data-f="all">All</button><button data-f="up">Up and running</button><button data-f="arch">Archived</button><button data-f="dev">In development</button></div>
+      <div className="cards">
+      <div className="g card" data-s="up"><div className="th"></div><span className="chip g pill"><span className="dot" style={{ background: '#6F8F72' }}></span>Up and running</span><p className="n">[Project one]</p><p className="mut" style={{ marginTop: '6px', fontSize: '14px' }}>Stack · 2026</p></div>
+      <div className="g card" data-s="arch"><div className="th"></div><span className="chip g pill"><span className="dot" style={{ background: '#9A978F' }}></span>Archived</span><p className="n">[Project two]</p><p className="mut" style={{ marginTop: '6px', fontSize: '14px' }}>Stack · 2023</p></div>
+      <div className="g card" data-s="dev"><div className="th"></div><span className="chip g pill"><span className="dot" style={{ background: '#B79A5B' }}></span>In development</span><p className="n">[Project three]</p><p className="mut" style={{ marginTop: '6px', fontSize: '14px' }}>Stack · 2026</p></div>
+      </div></div></section>
+
+      <section className="sec" id="news"><div><div className="num">05</div><h2>News Flash</h2></div>
+      <div><div className="cards">
+      <div className="g card"><div className="th"></div><p className="n">[Headline one]</p><p className="mut" style={{ marginTop: '6px', fontSize: '14px' }}>[Date]</p><p className="mut" style={{ margin: '10px 0 0', fontSize: '14px', lineHeight: '1.6' }}>A short snippet in your own words. One or two sentences.</p></div>
+      <div className="g card"><div className="th"></div><p className="n">[Headline two]</p><p className="mut" style={{ marginTop: '6px', fontSize: '14px' }}>[Date]</p><p className="mut" style={{ margin: '10px 0 0', fontSize: '14px', lineHeight: '1.6' }}>A short snippet in your own words. One or two sentences.</p></div>
+      <div className="g card"><div className="th"></div><p className="n">[Headline three]</p><p className="mut" style={{ marginTop: '6px', fontSize: '14px' }}>[Date]</p><p className="mut" style={{ margin: '10px 0 0', fontSize: '14px', lineHeight: '1.6' }}>A short snippet in your own words. One or two sentences.</p></div>
+      </div></div></section>
+
+      <section className="sec" id="want"><div><div className="num">06</div><h2>I want to...</h2></div>
+      <div className="hs"><div className="g card"><p className="yr">2027</p><p className="mut">[A goal, skill, or milestone you are aiming for]</p></div><div className="g card"><p className="yr">2028</p><p className="mut">[A goal, skill, or milestone you are aiming for]</p></div><div className="g card"><p className="yr">2029</p><p className="mut">[A goal, skill, or milestone you are aiming for]</p></div><div className="g card"><p className="yr">2030</p><p className="mut">[A goal, skill, or milestone you are aiming for]</p></div><div className="g card"><p className="yr">Someday</p><p className="mut">[A goal, skill, or milestone you are aiming for]</p></div><div className="g card"><p className="yr">Someday</p><p className="mut">[A goal, skill, or milestone you are aiming for]</p></div></div></section>
+
+      <section className="sec" id="meet"><div><div className="num">07</div><h2>Meet me at...</h2></div>
+      <div><div className="g row"><b style={{ fontSize: '19px', fontWeight: '600' }}>hello@[yourdomain]</b><span className="mut">Email</span></div><div className="g row"><b style={{ fontSize: '19px', fontWeight: '600' }}>[linkedin.com/in/yourname]</b><span className="mut">LinkedIn</span></div><div className="g row"><b style={{ fontSize: '19px', fontWeight: '600' }}>[github.com/yourname]</b><span className="mut">GitHub</span></div></div></section>
+
+      <footer><span>© 2026 Johaan Sebastian · Bangalore</span></footer>
       </main>
-    </div>
+      <Effects />
+    </>
   );
 }
