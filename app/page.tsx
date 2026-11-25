@@ -171,7 +171,7 @@ export default async function Home() {
         </section>
 
         <footer>
-          <span>© {site.year} {site.name} · {site.city}</span>
+          <span>© {site.year} {site.name} ·{site.city}</span>
         </footer>
       </main>
       <Effects />
