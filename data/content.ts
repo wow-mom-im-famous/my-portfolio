@@ -2,9 +2,9 @@
 // Edit the text here, save, and the page (and the Breaking News bar) updates.
 
 export const site = {
-  name: "[Your Name]",
-  initials: "YN", // shown on the loading screen
-  city: "[City]",
+  name: "Johaan Sebastian",
+  initials: "JS", // shown on the loading screen
+  city: "Bangalore",
   year: 2026, // footer copyright year
   tagline:
     "Software engineer building thoughtful products, writing about them, and shipping live demos.",
@@ -103,7 +103,7 @@ export const goals: Goal[] = [
 export type Contact = { value: string; label: string; href: string };
 
 export const contacts: Contact[] = [
-  { value: "hello@[yourdomain]", label: "Email", href: "mailto:hello@yourdomain.com" },
-  { value: "[linkedin.com/in/yourname]", label: "LinkedIn", href: "https://linkedin.com/in/yourname" },
-  { value: "[github.com/yourname]", label: "GitHub", href: "https://github.com/yourname" },
+  { value: "johaan.sebastian.n.work@gmail.com", label: "Email", href: "mailto:johaan.sebastian.n.work@gmail.com" },
+  { value: "Johaan Sebastian", label: "LinkedIn", href: "https://www.linkedin.com/in/johaan-sebastian-76315344b/" },
+  { value: "wow-mom-im-famous", label: "GitHub", href: "https://github.com/wow-mom-im-famous" },
 ];
