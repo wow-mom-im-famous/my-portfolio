@@ -1,7 +1,7 @@
 import Effects from "../components/Effects";
 import { site, sections, about, statusInfo, contacts } from "../data/content";
 import { getContent } from "../lib/items";
-
+import Image from "next/image";
 function Head({ i }: { i: number }) {
   return (
     <div>
@@ -70,7 +70,20 @@ export default async function Home() {
         <section className="sec" id="about">
           <Head i={0} />
           <div className="g" style={{ padding: "32px", display: "grid", gridTemplateColumns: "200px 1fr", gap: "28px", alignItems: "center" }}>
-            <div style={{ height: "220px", borderRadius: "20px", background: "linear-gradient(150deg,var(--b1),var(--b2))" }}></div>
+            <Image
+  src="/Photo.jpeg"
+  alt="My Photo"
+  width={400}
+  height={440}
+  style={{
+    display: "block",
+    width: "100%",
+    height: "220px",
+    objectFit: "cover",
+    objectPosition: "center top",
+    borderRadius: "20px",
+  }}
+/>
             <div>
               <p style={{ margin: "0 0 20px", fontSize: "18px", lineHeight: "1.7" }}>{about.text}</p>
               {about.chips.map((c) => (
