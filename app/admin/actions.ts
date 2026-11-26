@@ -23,7 +23,9 @@ function cleanData(section: SectionKey, fd: FormData): Record<string, string> | 
   const out: Record<string, string> = {};
   for (const f of SECTIONS[section].fields) {
     let v = String(fd.get(f.name) ?? "").trim().slice(0, f.long ? 1000 : 200);
-    if (f.options && !f.options.some((o) => o.value === v)) v = f.options[0].value;
+    if (f.options && !f.options.some((o) => o.value === v)) {
+      v = f.optional && v === "" ? "" : f.options[0].value;
+    }
     out[f.name] = v;
   }
   const first = SECTIONS[section].fields[0].name;
@@ -87,8 +89,8 @@ export async function seed() {
   const [{ n }] = await sql`select count(*)::int as n from items`;
   if (n > 0) return;
   const seedData: Record<SectionKey, Record<string, string>[]> = {
-    wasAt: starter.wasAt.map((x) => ({ year: x.year, text: x.text })),
-    achievements: starter.achievements.map((x) => ({ year: x.year, text: x.text })),
+    wasAt: starter.wasAt.map((x) => ({ year: x.year, tag: x.tag ?? "", text: x.text })),
+    achievements: starter.achievements.map((x) => ({ year: x.year, tag: x.tag ?? "", text: x.text })),
     projects: starter.projects.map((p) => ({ title: p.title, stack: p.stack, year: p.year, status: p.status })),
     news: starter.news.map((x) => ({ title: x.title, date: x.date, text: x.text })),
     goals: starter.goals.map((g) => ({ label: g.label, text: g.text })),

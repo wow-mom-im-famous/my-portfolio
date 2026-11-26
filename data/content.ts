@@ -1,6 +1,6 @@
 // Everything you see on the site lives in this file.
 // Edit the text here, save, and the page (and the Breaking News bar) updates.
-
+export type Stat = { label: string; value?: string; count?: "projects" | "flagship" | "talks" };
 export const site = {
   name: "Johaan Sebastian",
   initials: "JS", // shown on the loading screen
@@ -9,10 +9,10 @@ export const site = {
   tagline:
     "Software engineer building thoughtful products, writing about them, and shipping live demos.",
   stats: [
-    { value: "[00]", label: "projects built" },
-    { value: "[00]", label: "flagship" },
-    { value: "[00]", label: "talks & stages" },
-  ],
+    { count: "projects", label: "projects built" },
+    { count: "flagship", label: "flagship" },
+    { count: "talks", label: "talks & stages" },
+  ] as Stat[],
 };
 
 // Section ids and titles, in page order. They drive the navbar and the headings.
@@ -27,11 +27,14 @@ export const sections = [
 ];
 
 export const about = {
-  text: "A short statement about who you are, what you build, and what you care about. Two or three sentences work best.",
-  chips: ["[Studying]", "[Founder]", "[Plays]"],
+  text: "A ever curious PES AIML student, working to bring modern solutions to modern day problems of the Computers Society and beyond!",
+  chips: ["[PES AIML]", "[Ever Curious]", "[Ever Learning]"],
 };
 
-export type YearItem = { year: string; text: string };
+export type YearItem = { year: string; text: string; tag?: string };
+
+export const wasAtTags = ["Hackathons", "Flagship", "Talks and Stages"];
+export const achievementTags = ["Personal", "Academic", "Hobby"];
 
 export const wasAt: YearItem[] = [
   { year: "2026", text: "[Event or hackathon name]" },

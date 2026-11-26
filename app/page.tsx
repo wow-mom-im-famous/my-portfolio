@@ -14,6 +14,12 @@ function Head({ i }: { i: number }) {
 export default async function Home() {
   const { wasAt, achievements, projects, news, goals } = await getContent();
 
+  const counts = {
+    projects: projects.length,
+    flagship: wasAt.filter((e) => e.tag === "Flagship").length,
+    talks: wasAt.filter((e) => e.tag === "Talks and Stages").length,
+  };
+
   return (
     <>
       <div id="ld">
@@ -51,7 +57,7 @@ export default async function Home() {
             </span>
             <div className="stats">
               {site.stats.map((s) => (
-                <div key={s.label}><b>{s.value}</b><span>{s.label}</span></div>
+                <div key={s.label}><b>{s.count ? counts[s.count] : s.value}</b><span>{s.label}</span></div>
               ))}
             </div>
           </div>
@@ -79,6 +85,7 @@ export default async function Home() {
           <div className="cards">
             {wasAt.map((e, k) => (
               <div className="g card" key={k}>
+                {e.tag && <span className="chip g pill">{e.tag}</span>}
                 <p className="yr">{e.year}</p>
                 <p className="mut">{e.text}</p>
               </div>
@@ -91,6 +98,7 @@ export default async function Home() {
           <div className="cards">
             {achievements.map((a, k) => (
               <div className="g card" key={k}>
+                {a.tag && <span className="chip g pill">{a.tag}</span>}
                 <p className="yr">{a.year}</p>
                 <p className="mut">{a.text}</p>
               </div>
@@ -171,7 +179,7 @@ export default async function Home() {
         </section>
 
         <footer>
-          <span>© {site.year} {site.name} ·{site.city}</span>
+          <span>© {site.year} {site.name} · {site.city}</span>
         </footer>
       </main>
       <Effects />

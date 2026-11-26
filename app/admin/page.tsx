@@ -7,12 +7,13 @@ import { login, logout, addItem, updateItem, deleteItem, seed } from "./actions"
 export const metadata = { title: "Admin", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
-function FieldInput({ f, value }: { f: Field; value?: string }) {
+function FieldInput({ f, value, existing }: { f: Field; value?: string; existing?: boolean }) {
   return (
     <label className={f.long ? "adm-f long" : "adm-f"}>
       <span>{f.label}</span>
       {f.options ? (
-        <select name={f.name} defaultValue={value ?? f.options[0].value}>
+        <select name={f.name} defaultValue={existing && f.optional ? (value ?? "") : (value ?? f.options[0].value)}>
+          {existing && f.optional && !value && <option value="">(not set)</option>}
           {f.options.map((o) => (
             <option key={o.value} value={o.value}>{o.label}</option>
           ))}
@@ -98,7 +99,7 @@ export default async function Admin({
                   <input type="hidden" name="section" value={key} />
                   <div className="adm-grid">
                     {def.fields.map((f) => (
-                      <FieldInput key={f.name} f={f} value={r.data[f.name]} />
+                      <FieldInput key={f.name} f={f} value={r.data[f.name]} existing />
                     ))}
                   </div>
                   <div style={{ display: "flex", gap: 10 }}>

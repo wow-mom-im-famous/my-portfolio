@@ -1,4 +1,4 @@
-import { statusInfo } from "../data/content";
+import { statusInfo, wasAtTags, achievementTags } from "../data/content";
 
 export type SectionKey = "wasAt" | "achievements" | "projects" | "news" | "goals";
 
@@ -7,7 +7,10 @@ export type Field = {
   label: string;
   long?: boolean; // multi-line text box
   options?: { value: string; label: string }[]; // drop-down
+  optional?: boolean; // a drop-down may be left empty ("not set")
 };
+
+const asOptions = (list: string[]) => list.map((t) => ({ value: t, label: t }));
 
 type SectionDef = {
   label: string;
@@ -22,6 +25,7 @@ export const SECTIONS: Record<SectionKey, SectionDef> = {
     order: "desc",
     fields: [
       { name: "year", label: "Year" },
+      { name: "tag", label: "Tag", options: asOptions(wasAtTags), optional: true },
       { name: "text", label: "Event or hackathon" },
     ],
   },
@@ -30,6 +34,7 @@ export const SECTIONS: Record<SectionKey, SectionDef> = {
     order: "desc",
     fields: [
       { name: "year", label: "Year" },
+      { name: "tag", label: "Tag", options: asOptions(achievementTags), optional: true },
       { name: "text", label: "Achievement" },
     ],
   },
